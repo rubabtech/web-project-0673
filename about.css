@@ -1,0 +1,74 @@
+/* Zohra Kitchen: about page */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'DM Sans', Arial, sans-serif; line-height: 1.7; color: #422f33; }
+h1, h2, h3, legend { font-family: 'Playfair Display', Georgia, serif; line-height: 1.18; }
+h1 { font-size: clamp(2.5rem, 5vw, 4.8rem); font-weight: 500; margin: .3em 0; letter-spacing: -.035em; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.7rem); font-weight: 500; }
+a { color: inherit; text-underline-offset: 5px; }
+img { max-width: 100%; display: block; }
+header { padding: 20px max(5%, calc((100% - 1200px)/2)); }
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-family: Georgia, serif; font-size: 1.35rem; white-space: nowrap; }
+.brand img { border-radius: 50%; object-fit: cover; }
+nav { display: flex; gap: 8px 22px; flex-wrap: wrap; align-items: center; }
+nav a { text-decoration: none; font-size: .88rem; padding: 8px 0; }
+nav a[aria-current] { color: #8b294c; font-weight: 700; }
+.eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .7rem; font-weight: 700; color: #8b294c; }
+footer { padding: 35px 5%; text-align: center; background: #422f33; color: #fff5ed; margin-top: 70px; }
+footer a { display: inline-block; margin: 5px 12px; font-size: .85rem; }
+footer p { font-family: Georgia, serif; font-size: 1.3rem; }
+.skip-link { position: absolute; left: 16px; top: -100px; background: white; padding: 10px; z-index: 10; }
+.skip-link:focus { top: 10px; }
+:focus-visible { outline: 3px solid #885429; outline-offset: 4px; }
+[hidden] { display: none !important; }
+button, input, select, textarea { font: inherit; }
+button, .button { cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+body { background: #fbf5eb; }
+header { text-align: center; background: white; }
+nav { justify-content: center; border-top: 1px solid #e3d8c6; margin-top: 18px; padding-top: 10px; }
+nav a { border-bottom: 2px solid transparent; }
+nav a:hover, nav a[aria-current] { border-bottom-color: #ab7b4f; }
+.page-banner { background: linear-gradient(90deg, rgba(251,245,235,.97), rgba(251,245,235,.70)), url('IMAGES/cake2 (15).jpeg') center/cover; padding: 55px 8%; border-bottom: 1px solid #ddc7ad; }
+main > section:not(.page-banner) { max-width: 1100px; margin: 48px auto; padding: 25px; }
+.story { position: relative; display: flow-root; background: white; border: 1px solid #e6d8c4; border-radius: 6px; }
+.story-photo { float: left; width: 35%; height: 320px; object-fit: cover; margin: 0 35px 15px 0; border-radius: 4px; }
+.story h2 { margin-top: 18px; }
+.story-label { display: inline-block; background: #f4e9d8; padding: 5px 14px; border-radius: 20px; color: #6a482e; font-size: .8rem; }
+.info-columns article { display: inline-block; vertical-align: top; width: 48%; padding: 20px; }
+li { padding-left: 8px; margin-bottom: 10px; }
+.price-section { background: #f3e8d7; border-radius: 6px; }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 460px; background: white; }
+caption { text-align: left; padding: 12px 0; font-weight: 700; }
+th, td { border-bottom: 1px solid #e5d6bd; padding: 16px; text-align: left; }
+thead { background: #76563c; color: white; }
+.media-section { background: white; }
+video { display: block; width: min(100%, 650px); max-height: 420px; margin: 24px 0; background: #f3e8d7; }
+audio { width: min(100%, 550px); }
+@media (max-width: 700px) { .story-photo { float: none; width: 100%; margin-right: 0; } .info-columns article { display: block; width: 100%; padding: 0; } main > section:not(.page-banner) { margin: 25px 16px; padding: 20px; } nav { gap: 4px 16px; } }
+
+/* Scroll entrances and gentle interaction effects */
+html { scroll-behavior: smooth; }
+.scroll-reveal { opacity: 0; translate: 0 26px; transition: opacity .7s ease, translate .7s cubic-bezier(.2,.7,.2,1); }
+.scroll-reveal.is-visible { opacity: 1; translate: 0 0; }
+.scroll-reveal:nth-child(3n + 2) { transition-delay: .08s; }
+.scroll-reveal:nth-child(3n + 3) { transition-delay: .16s; }
+nav a { transition: color .2s ease, background-color .2s ease, translate .2s ease; }
+button, .button { transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease; }
+button:active, .button:active { transform: scale(.98); }
+@media (hover: hover) and (pointer: fine) {
+    nav a:hover { translate: 0 -2px; }
+    button:not(:disabled):hover, .button:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(82,41,54,.16); }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .scroll-reveal { opacity: 1; translate: none; }
+}
+
+.story-photo { transition: filter .4s ease; }
+tbody tr { transition: background-color .25s ease; }
+tbody tr:hover { background: #fbf1e3; }
+@media (hover: hover) and (pointer: fine) { .story-photo:hover { filter: saturate(1.12); } }

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Book Your Cake at Zohra Kitchen, a home bakery in Lahore.">
+        <title>
+            Book Your Cake | Zohra Kitchen
+        </title>
+        <link rel="stylesheet" href="booking.css">
+    </head>
+    <body>
+        <a class="skip-link" href="#main">
+            Skip to content
+        </a>
+        <header>
+            <a class="brand" href="index.html">
+                <img src="IMAGES/logo.png.jpeg" alt="Zohra Kitchen logo" width="56" height="56">
+                <span>
+                    Zohra Kitchen
+                </span>
+            </a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">
+                    Home
+                </a>
+                <a href="cakes.html">
+                    Cakes
+                </a>
+                <a href="about.html">
+                    About
+                </a>
+                <a href="contact.html">
+                    Contact
+                </a>
+                <a href="booking.html" aria-current="page">
+                    Book Your Cake
+                </a>
+                <a href="gallery.html">
+                    Gallery
+                </a>
+            </nav>
+        </header>
+        <main id="main">
+            <section class="booking-heading">
+                <p class="eyebrow">
+                    Let's plan something sweet
+                </p>
+                <h1>
+                    Book your cake
+                </h1>
+                <p>
+                    Complete your preferences, then open WhatsApp to discuss your order. Availability and price are confirmed by the baker.
+                </p>
+            </section>
+            <form id="booking-form">
+                <fieldset>
+                    <legend>
+                        Your details
+                    </legend>
+                    <div class="form-grid">
+                        <label>
+                            Full name *
+                            <input name="customer" type="text" required minlength="2" maxlength="60" autocomplete="name">
+                        </label>
+                        <label>
+                            Email *
+                            <input name="email" type="email" required autocomplete="email">
+                        </label>
+                        <label>
+                            Phone number *
+                            <input name="phone" type="tel" required minlength="10" maxlength="16" autocomplete="tel" placeholder="03001234567">
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        Your celebration
+                    </legend>
+                    <label>
+                        Cake / design name
+                        <input type="text" name="cake" maxlength="100" placeholder="Choose a cake from our menu or describe your own">
+                    </label>
+                    <div class="form-grid">
+                        <label>
+                            Preferred date *
+                            <input name="date" type="date" required>
+                        </label>
+                        <label>
+                            Preferred time *
+                            <input name="time" type="time" required min="10:00" max="22:00">
+                        </label>
+                        <label>
+                            Cake weight in pounds *
+                            <input name="weight" type="number" min="1" max="10" value="2" required>
+                        </label>
+                        <label>
+                            Flavour
+                            <select name="flavour">
+                                <option value="" disabled>
+                                    Choose a flavour
+                                </option>
+                                <option selected>
+                                    Chocolate Fudge
+                                </option>
+                                <option>
+                                    Vanilla
+                                </option>
+                                <option>
+                                    Red Velvet
+                                </option>
+                                <option>
+                                    Nutella
+                                </option>
+                                <option>
+                                    Caramel
+                                </option>
+                            </select>
+                        </label>
+                        <label>
+                            Reference design URL
+                            <input name="reference" type="url" placeholder="https://example.com/cake">
+                        </label>
+                        <label>
+                            Theme colour
+                            <input name="colour" type="color" value="#b94f78">
+                        </label>
+                        <label>
+                            Decoration level (1 simple, 5 detailed)
+                            <input name="decoration" type="range" min="1" max="5" value="3">
+                        </label>
+                        <label>
+                            Reference photo (preview only)
+                            <input name="photo" type="file" accept="image/*" aria-describedby="photo-note">
+                        </label>
+                        <label>
+                            Bakery
+                            <input type="text" name="bakery" value="Zohra Kitchen" readonly>
+                        </label>
+                        <label>
+                            Online payment
+                            <input type="text" value="Arrange directly with the baker" disabled>
+                        </label>
+                    </div>
+                    <p class="help" id="photo-note">
+                        This static website does not upload photos. Attach the photo yourself in WhatsApp.
+                    </p>
+                    <img id="photo-preview" alt="Your selected cake reference" hidden>
+                    <label>
+                        Message on cake / extra instructions
+                        <textarea name="message" rows="4" maxlength="500" placeholder="Happy Birthday! Please mention any dietary requirements.">
+                        </textarea>
+                    </label>
+                    <div class="choices">
+                        <p>
+                            Delivery preference
+                        </p>
+                        <label>
+                            <input type="radio" name="delivery" value="Collection" checked>
+                            Collection
+                        </label>
+                        <label>
+                            <input type="radio" name="delivery" value="Delivery">
+                            Delivery
+                        </label>
+                    </div>
+                    <div class="choices">
+                        <label>
+                            <input type="checkbox" name="updates">
+                            I would like to hear about new cake designs.
+                        </label>
+                        <label>
+                            <input type="checkbox" name="acknowledge" required>
+                            I understand this is an enquiry, and my booking needs confirmation. *
+                        </label>
+                    </div>
+                </fieldset>
+                <details class="learning-fields">
+                    <summary>
+                        Student project: registration field demonstration
+                    </summary>
+                    <label>
+                        Demo password
+                        <input name="practice-password" type="password" minlength="8" maxlength="30" autocomplete="new-password" aria-describedby="password-note">
+                    </label>
+                    <p id="password-note" class="help">
+                        Use a made-up value only. This optional classroom field is never stored or sent. No account is created.
+                    </p>
+                </details>
+                <button type="submit">
+                    Continue on WhatsApp
+                </button>
+                <p class="help">
+                    * Required fields. Your enquiry text is shared only when you continue to WhatsApp and choose to send it.
+                </p>
+                <p id="booking-status" role="status">
+                </p>
+            </form>
+        </main>
+        <footer>
+            <p>
+                Zohra Kitchen · Homemade in Lahore
+            </p>
+            <a href="https://wa.me/923244316234" target="_blank" rel="noopener noreferrer">
+                WhatsApp: +92 324 4316234
+            </a>
+            <a href="https://www.instagram.com/zohrakitchen2025" target="_blank" rel="noopener noreferrer">
+                Instagram: @zohrakitchen2025
+            </a>
+        </footer>
+        <script src="booking.js" defer>
+        </script>
+        <script src="animations.js" defer></script>
+</body>
+</html>
