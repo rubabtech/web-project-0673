@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Contact Us at Zohra Kitchen, a home bakery in Lahore.">
+        <title>
+            Contact Us | Zohra Kitchen
+        </title>
+        <link rel="stylesheet" href="contact.css">
+    </head>
+    <body>
+        <a class="skip-link" href="#main">
+            Skip to content
+        </a>
+        <header>
+            <a class="brand" href="index.html">
+                <img src="IMAGES/logo.png.jpeg" alt="Zohra Kitchen logo" width="56" height="56">
+                <span>
+                    Zohra Kitchen
+                </span>
+            </a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">
+                    Home
+                </a>
+                <a href="cakes.html">
+                    Cakes
+                </a>
+                <a href="about.html">
+                    About
+                </a>
+                <a href="contact.html" aria-current="page">
+                    Contact
+                </a>
+                <a href="booking.html">
+                    Book Your Cake
+                </a>
+                <a href="gallery.html">
+                    Gallery
+                </a>
+            </nav>
+        </header>
+        <main id="main">
+            <section class="contact-heading">
+                <p class="eyebrow">
+                    We would love to hear your idea
+                </p>
+                <h1>
+                    Let's make it special
+                </h1>
+            </section>
+            <div class="contact-layout">
+                <section class="contact-details">
+                    <h2>
+                        Say hello
+                    </h2>
+                    <p>
+                        Zohra Kitchen is Esha Ahsan's home bakery in Lahore, creating customized cakes and sweet treats for your celebrations.
+                    </p>
+                    <dl>
+                        <dt>
+                            Location
+                        </dt>
+                        <dd>
+                            Garhi Shahu, Lahore
+                        </dd>
+                        <dt>
+                            WhatsApp
+                        </dt>
+                        <dd>
+                            <a href="https://wa.me/923244316234">
+                                +92 324 4316234
+                            </a>
+                        </dd>
+                        <dt>
+                            Instagram
+                        </dt>
+                        <dd>
+                            <a href="https://www.instagram.com/zohrakitchen2025">
+                                @zohrakitchen2025
+                            </a>
+                        </dd>
+                    </dl>
+                    <a class="contact-book" href="booking.html">
+                        Ready to plan a cake? →
+                    </a>
+                </section>
+                <section class="contact-form-panel">
+                    <h2>
+                        Your message
+                    </h2>
+                    <form id="contact-form">
+                        <label>
+                            Your name *
+                            <input name="name" type="text" minlength="2" maxlength="60" required autocomplete="name">
+                        </label>
+                        <label>
+                            Email *
+                            <input name="email" type="email" required autocomplete="email">
+                        </label>
+                        <label>
+                            Message *
+                            <textarea name="message" rows="5" minlength="10" maxlength="500" required>
+                            </textarea>
+                        </label>
+                        <p id="character-count">
+                            0 / 500 characters
+                        </p>
+                        <button type="submit">
+                            Prepare WhatsApp message
+                        </button>
+                        <p id="contact-status" role="status">
+                        </p>
+                        <a id="message-link" href="https://wa.me/923244316234" target="_blank" rel="noopener noreferrer" hidden>
+                            Open your message in WhatsApp →
+                        </a>
+                    </form>
+                </section>
+            </div>
+            <section class="faq">
+                <h2>
+                    Before you order
+                </h2>
+                <button id="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-answer">
+                    How do I confirm a booking?
+                </button>
+                <p id="faq-answer" hidden>
+                    Share your date, design and preferences with the baker on WhatsApp. Your booking is confirmed only after availability, the final quote and any payment arrangements have been agreed.
+                </p>
+            </section>
+        </main>
+        <footer>
+            <p>
+                Zohra Kitchen · Homemade in Lahore
+            </p>
+            <a href="https://wa.me/923244316234" target="_blank" rel="noopener noreferrer">
+                WhatsApp: +92 324 4316234
+            </a>
+            <a href="https://www.instagram.com/zohrakitchen2025" target="_blank" rel="noopener noreferrer">
+                Instagram: @zohrakitchen2025
+            </a>
+        </footer>
+        <script src="contact.js" defer>
+        </script>
+        <script src="animations.js" defer></script>
+</body>
+</html>

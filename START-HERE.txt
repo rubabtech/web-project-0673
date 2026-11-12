@@ -1,0 +1,28 @@
+Rubab — website chalane ka tareeqa
+
+1. ZIP par right-click karke Extract All karo.
+2. Extracted folder kholo. index.html ko double-click karo.
+3. Menu se Home, Cakes, About, Contact, Book Your Cake aur Gallery check karo.
+4. Editing ke liye VS Code > File > Open Folder se yehi extracted folder kholo.
+5. Purani website ka backup apne paas rakho. Pehle local version check karo.
+
+Assignment 1 ki priority:
+- index.html + home.css
+- about.html + about.css
+- booking.html + booking.css
+- booking.js (WhatsApp enquiry)
+- Images aur Media folders
+
+Handwritten sheet:
+- Apna naam, roll number, project title aur pages ki list likho.
+- Brief ki AI declaration sachai ke saath copy karo, sign aur date karo.
+- Apne samajh kar likhe hue 3 snippets choose karo; har snippet ka purpose
+  apne alfaaz mein explain karo. Har required sheet par initials lagao.
+
+Samajhne ke liye pehle yeh 3 cheezein dekho:
+1. Home ka navigation: href="about.html" ek alag page kholta hai.
+2. About ka .story-photo: float:left text ko image ke saath wrap karta hai.
+3. Booking ka required/min/max: browser incomplete ya out-of-range input rokta hai.
+
+README.md mein complete requirements, AI usage log, checks aur pending items hain.
+Yeh package automatically GitHub par upload nahi hua.

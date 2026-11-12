@@ -1,0 +1,69 @@
+/* Zohra Kitchen: gallery page */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'DM Sans', Arial, sans-serif; line-height: 1.7; color: #422f33; }
+h1, h2, h3, legend { font-family: 'Playfair Display', Georgia, serif; line-height: 1.18; }
+h1 { font-size: clamp(2.5rem, 5vw, 4.8rem); font-weight: 500; margin: .3em 0; letter-spacing: -.035em; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.7rem); font-weight: 500; }
+a { color: inherit; text-underline-offset: 5px; }
+img { max-width: 100%; display: block; }
+header { padding: 20px max(5%, calc((100% - 1200px)/2)); }
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-family: Georgia, serif; font-size: 1.35rem; white-space: nowrap; }
+.brand img { border-radius: 50%; object-fit: cover; }
+nav { display: flex; gap: 8px 22px; flex-wrap: wrap; align-items: center; }
+nav a { text-decoration: none; font-size: .88rem; padding: 8px 0; }
+nav a[aria-current] { color: #8b294c; font-weight: 700; }
+.eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .7rem; font-weight: 700; color: #8b294c; }
+footer { padding: 35px 5%; text-align: center; background: #422f33; color: #fff5ed; margin-top: 70px; }
+footer a { display: inline-block; margin: 5px 12px; font-size: .85rem; }
+footer p { font-family: Georgia, serif; font-size: 1.3rem; }
+.skip-link { position: absolute; left: 16px; top: -100px; background: white; padding: 10px; z-index: 10; }
+.skip-link:focus { top: 10px; }
+:focus-visible { outline: 3px solid #885429; outline-offset: 4px; }
+[hidden] { display: none !important; }
+button, input, select, textarea { font: inherit; }
+button, .button { cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+body { background: #f5eee8; }
+header { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 35px; border-bottom: 1px solid #d9c5bd; }
+nav { justify-content: flex-end; gap: 8px 18px; }
+nav a { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; }
+nav a[aria-current], nav a:hover { text-decoration: underline; }
+.gallery-heading { padding: 60px 25px 35px; max-width: 850px; margin: auto; text-align: center; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; max-width: 1200px; padding: 20px 25px; margin: auto; }
+figure { margin: 0; padding: 12px 12px 20px; background: #fffdf8; border: 1px solid #e4d8ce; box-shadow: 0 6px 18px rgba(65,40,42,.05); animation: appear .7s ease both; }
+figure:nth-child(even) { animation-delay: .1s; }
+figure img { width: 100%; height: 330px; object-fit: cover; border-radius: 2px; }
+figcaption { font-family: Georgia,serif; text-align: center; padding: 20px 5px 0; font-size: 1.05rem; }
+.gallery-cta { text-align: center; padding: 50px 20px; }
+.gallery-cta a { color: #8b294c; }
+@keyframes appear { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1000px) { header { grid-template-columns: 1fr; justify-items: center; gap: 10px; } nav { justify-content: center; } .gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 600px) { .gallery-grid { grid-template-columns: 1fr; padding: 15px; } figure img { height: 380px; } nav { gap: 8px 15px; } }
+
+/* Scroll entrances and gentle interaction effects */
+html { scroll-behavior: smooth; }
+.scroll-reveal { opacity: 0; translate: 0 26px; transition: opacity .7s ease, translate .7s cubic-bezier(.2,.7,.2,1); }
+.scroll-reveal.is-visible { opacity: 1; translate: 0 0; }
+.scroll-reveal:nth-child(3n + 2) { transition-delay: .08s; }
+.scroll-reveal:nth-child(3n + 3) { transition-delay: .16s; }
+nav a { transition: color .2s ease, background-color .2s ease, translate .2s ease; }
+button, .button { transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease; }
+button:active, .button:active { transform: scale(.98); }
+@media (hover: hover) and (pointer: fine) {
+    nav a:hover { translate: 0 -2px; }
+    button:not(:disabled):hover, .button:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(82,41,54,.16); }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .scroll-reveal { opacity: 1; translate: none; }
+}
+
+/* Scroll reveal replaces the old load-only entrance animation. */
+figure { animation: none; overflow: hidden; transition: box-shadow .3s ease, transform .3s ease; }
+figure img { transition: transform .6s ease; }
+.gallery-heading h1 { animation: gallery-title .7s ease both; }
+@keyframes gallery-title { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (hover: hover) and (pointer: fine) { figure:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(65,40,42,.12); } figure:hover img { transform: scale(1.025); } }

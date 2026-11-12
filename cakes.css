@@ -1,0 +1,66 @@
+/* Zohra Kitchen: cakes page */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'DM Sans', Arial, sans-serif; line-height: 1.7; color: #422f33; }
+h1, h2, h3, legend { font-family: 'Playfair Display', Georgia, serif; line-height: 1.18; }
+h1 { font-size: clamp(2.5rem, 5vw, 4.8rem); font-weight: 500; margin: .3em 0; letter-spacing: -.035em; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.7rem); font-weight: 500; }
+a { color: inherit; text-underline-offset: 5px; }
+img { max-width: 100%; display: block; }
+header { padding: 20px max(5%, calc((100% - 1200px)/2)); }
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-family: Georgia, serif; font-size: 1.35rem; white-space: nowrap; }
+.brand img { border-radius: 50%; object-fit: cover; }
+nav { display: flex; gap: 8px 22px; flex-wrap: wrap; align-items: center; }
+nav a { text-decoration: none; font-size: .88rem; padding: 8px 0; }
+nav a[aria-current] { color: #8b294c; font-weight: 700; }
+.eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .7rem; font-weight: 700; color: #8b294c; }
+footer { padding: 35px 5%; text-align: center; background: #422f33; color: #fff5ed; margin-top: 70px; }
+footer a { display: inline-block; margin: 5px 12px; font-size: .85rem; }
+footer p { font-family: Georgia, serif; font-size: 1.3rem; }
+.skip-link { position: absolute; left: 16px; top: -100px; background: white; padding: 10px; z-index: 10; }
+.skip-link:focus { top: 10px; }
+:focus-visible { outline: 3px solid #885429; outline-offset: 4px; }
+[hidden] { display: none !important; }
+button, input, select, textarea { font: inherit; }
+button, .button { cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+body { background: #fff9f3; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 25px; background: #4b3039; color: #fff7ed; }
+nav a { border-bottom: 1px solid transparent; }
+nav a[aria-current], nav a:hover { color: #f1c4b3; border-color: #f1c4b3; }
+.catalog-heading { max-width: 800px; text-align: center; margin: 60px auto 45px; padding: 0 25px; }
+.cake-list { max-width: 1220px; margin: auto; padding: 0 25px; display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 30px; }
+.cake-card { flex: 0 1 calc((100% - 60px)/3); min-width: 0; background: white; border: 1px solid #eadbd3; border-radius: 13px; overflow: hidden; box-shadow: 0 7px 20px rgba(75,48,57,.04); transition: transform .25s ease, box-shadow .25s ease; }
+.cake-card:hover { transform: translateY(-7px); box-shadow: 0 15px 30px rgba(75,48,57,.13); }
+.cake-card img { width: 100%; height: 330px; object-fit: cover; }
+.card-copy { padding: 23px; }
+.card-copy h2 { font-size: 1.5rem; min-height: 2.3em; margin-top: 0; }
+.card-copy p { margin: 7px 0; }
+.price { color: #8b294c; font-size: 1.2rem; font-weight: 700; }
+.card-copy a { display: inline-block; margin-top: 15px; font-size: .85rem; color: #7e334e; }
+@media (max-width: 1050px) { header { flex-direction: column; } nav { justify-content: center; } .cake-card { flex-basis: calc((100% - 30px)/2); } }
+@media (max-width: 600px) { .cake-card { flex-basis: 100%; } nav { gap: 4px 15px; } .cake-card img { height: 350px; } }
+
+/* Scroll entrances and gentle interaction effects */
+html { scroll-behavior: smooth; }
+.scroll-reveal { opacity: 0; translate: 0 26px; transition: opacity .7s ease, translate .7s cubic-bezier(.2,.7,.2,1); }
+.scroll-reveal.is-visible { opacity: 1; translate: 0 0; }
+.scroll-reveal:nth-child(3n + 2) { transition-delay: .08s; }
+.scroll-reveal:nth-child(3n + 3) { transition-delay: .16s; }
+nav a { transition: color .2s ease, background-color .2s ease, translate .2s ease; }
+button, .button { transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease; }
+button:active, .button:active { transform: scale(.98); }
+@media (hover: hover) and (pointer: fine) {
+    nav a:hover { translate: 0 -2px; }
+    button:not(:disabled):hover, .button:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(82,41,54,.16); }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .scroll-reveal { opacity: 1; translate: none; }
+}
+
+.cake-card img { transition: transform .55s ease; }
+.cake-card .card-copy { position: relative; background: white; }
+@media (hover: hover) and (pointer: fine) { .cake-card:hover img { transform: scale(1.045); } }
